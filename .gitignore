@@ -1,0 +1,5 @@
+.vscode/
+*.db
+*.zip
+rl_env/
+__pycache__/
