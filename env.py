@@ -50,7 +50,6 @@ class BotEnv(gym.Env):
                 v = action[i]
                 repulsion = np.array([0.0, 0.0])
 
-                # 🔥 FINAL: tuned bot–bot avoidance (balanced)
                 for j in range(self.num_bots):
                     if i != j:
                         diff = self.positions[i] - self.positions[j]
@@ -66,7 +65,7 @@ class BotEnv(gym.Env):
                             perp = np.array([-direction[1], direction[0]])
                             repulsion += 1.0 * perp * (1.0 - d)
 
-                # human avoidance (unchanged)
+                # human avoidance 
                 for h in self.humans:
                     diff = self.positions[i] - h
                     d = np.linalg.norm(diff)
